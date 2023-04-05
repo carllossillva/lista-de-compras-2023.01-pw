@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Formulário de Produto</title>
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <title>Lista de Compras</title>
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1 id="titulo">
-        Lista de compras
-    </h1>
+    <h1>Lista de Compras</h1>
     <p>
     <form>
       <label for="produto">Produto:</label>
-      <input type="text" id="produto" name="produto"><br><br>
-      
+      <input type="text" id="produto" />
+
       <label for="quantidade">Quantidade:</label>
-      <input type="number" id="quantidade" name="quantidade"><br><br>
-      
+      <input type="number" id="quantidade" />
+
       <label for="valor">Valor:</label>
-      <input type="number" id="valor" name="valor" step="0.01"><br><br>
-      
-      <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
-      <input type="button" value="Limpar" onclick="limparCampos()">
+      <input type="number" id="valor" />
+<p>
+      <button type="button" onclick="adicionarProduto()">Adicionar</button>
+      <button type="button" onclick="limparTabela()">Limpar</button>
     </form>
     </p>
+  </p>
     <table id="tabela">
       <tr>
         <th>Produto</th>
@@ -35,8 +34,6 @@
     
     
     <p>Total: R$<span id="total">0.00</span></p>
-    
-    
+    <script src="script.js"></script>
   </body>
 </html>
-

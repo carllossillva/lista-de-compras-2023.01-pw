@@ -1,45 +1,40 @@
+let tabela = document.querySelector("#tabela tbody");
+let total = document.querySelector("#total");
 
-      function adicionarProduto() {
-        let produto = document.getElementById("produto").value;
-        let quantidade = parseInt(document.getElementById("quantidade").value);
-        let valor = parseFloat(document.getElementById("valor").value);
-        let valorTotal = quantidade * valor;
-        
-        let tabela = document.getElementById("tabela");
-        let novaLinha = tabela.insertRow(-1);
-        let celulaProduto = novaLinha.insertCell(0);
-        let celulaQuantidade = novaLinha.insertCell(1);
-        let celulaValor = novaLinha.insertCell(2);
-        let celulaValorTotal = novaLinha.insertCell(3);
-        
-        celulaProduto.innerHTML = produto;
-        celulaQuantidade.innerHTML = quantidade;
-        celulaValor.innerHTML = valor.toFixed(2);
-        celulaValorTotal.innerHTML = valorTotal.toFixed(2);
-        
-        atualizarTotal();
-      }
-      
-      function atualizarTotal() {
-        let total = 0;
-        let tabela = document.getElementById("tabela");
-        for (let i = 1; i < tabela.rows.length; i++) {
-          total += parseFloat(tabela.rows[i].cells[3].innerHTML);
-        }
-        document.getElementById("total").innerHTML = total.toFixed(2);
-      }
+function adicionarProduto() {
+  let produto = document.querySelector("#produto").value;
+  let quantidade = Number(document.querySelector("#quantidade").value);
+  let valor = Number(document.querySelector("#valor").value);
+  
 
-      let produto = document.getElementById("produto");
-      produto.addEventListener("blur", function() {
-        if (produto.value === "") {
-          alert("Por favor, é necessário preencher o produto!");
-        }
-      });
+  if (produto === "" || quantidade === 0 || valor === 0) {
+    alert("Preencha todos os campos.");
+    return;
+  }
 
-      const handlelimparCampos = () => {
-        tabela = [];
-        tabela.innerHTML = "";
-        produto.focus();
-      };
+  let linha = document.createElement("tr");
+  let colunaProduto = document.createElement("td");
+  let colunaQuantidade = document.createElement("td");
+  let colunaValor = document.createElement("td");
+  let colunatotal = document.createElement("td");
 
-      limparCampos.onclick = handlelimparCampos;
+  colunaProduto.textContent = produto;
+  colunaQuantidade.textContent = quantidade;
+  colunaValor.textContent = valor;
+  colunatotal.textContent = total;
+
+  linha.appendChild(colunaProduto);
+  linha.appendChild(colunaQuantidade);
+  linha.appendChild(colunaValor);
+  tabela.appendChild(linha);
+  linha.appendChild(colunatotal);
+
+  let totalAtual = Number(total.textContent);
+  let valorFinal = quantidade * valor;
+  total.textContent = totalAtual + valorFinal;
+}
+
+function limparTabela() {
+  tabela.innerHTML = "";
+  total.textContent = "0";
+}
