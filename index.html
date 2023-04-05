@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulário de Produto</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1 id="titulo">
+        Lista de compras
+    </h1>
+    <p>
+    <form>
+      <label for="produto">Produto:</label>
+      <input type="text" id="produto" name="produto"><br><br>
+      
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" name="quantidade"><br><br>
+      
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" name="valor" step="0.01"><br><br>
+      
+      <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+    </form>
+    </p>
+    <table id="tabela">
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Valor</th>
+        <th>Valor Total</th>
+      </tr>
+    </table>
+    
+    
+    <p>Total: R$<span id="total">0.00</span></p>
+    
+    
+  </body>
+</html>
+
