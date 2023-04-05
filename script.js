@@ -28,4 +28,18 @@
         }
         document.getElementById("total").innerHTML = total.toFixed(2);
       }
-    
+
+      let produto = document.getElementById("produto");
+      produto.addEventListener("blur", function() {
+        if (produto.value === "") {
+          alert("Por favor, é necessário preencher o produto!");
+        }
+      });
+
+      const handlelimparCampos = () => {
+        tabela = [];
+        tabela.innerHTML = "";
+        produto.focus();
+      };
+
+      limparCampos.onclick = handlelimparCampos;
