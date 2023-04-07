@@ -2,6 +2,8 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  color: black;
+  
   
 }
 
@@ -9,17 +11,75 @@ th, td {
   border: 1px solid #ffffff;
   text-align: left;
   padding: 8px;
+  background-color: #ebebab;
+  
+}
+.linha{
+  color: black;
 }
 
 th {
-  background-color: rgb(247, 237, 164);
+  background-color: #ebebab;
 }
 
-#total {
-  font-weight: bold;
-  
-}
+
 
 body{
-  background-color: rgb(79, 207, 249);
+  background-color: #78bd91;
+}
+
+.titulo{
+  text-align: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #4d8f81;
+  border-radius: 40px;
+ 
+}
+
+.product{
+
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: white;
+  background-color: #ebebab;
+  color: black;
+}
+.quant{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: white;
+  background-color: #ebebab;
+  color: black;
+}
+.value{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: white;
+  background-color: #ebebab;
+  color: black;
+}
+.inputs{
+  display: flex;
+       justify-content: center;
+        gap: 60px;
+}
+
+.firstInput{
+
+left: 30px;
+}
+
+.secondInput{
+
+  right: 30px;
+
+}
+
+.thirdInput{
+
+right: 60px;
 }

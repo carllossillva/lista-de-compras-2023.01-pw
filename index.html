@@ -6,34 +6,41 @@
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Lista de Compras</h1>
-    <p>
+    <div class="titulo">
+      <h1>Lista de Compras</h1>
+    </div>
+    <hr id="linha">
     <form>
-      <label for="produto">Produto:</label>
-      <input type="text" id="produto" />
-
-      <label for="quantidade">Quantidade:</label>
-      <input type="number" id="quantidade" />
-
-      <label for="valor">Valor:</label>
-      <input type="number" id="valor" />
-<p>
-      <button type="button" onclick="adicionarProduto()">Adicionar</button>
-      <button type="button" onclick="limparTabela()">Limpar</button>
+      <div class="inputs">
+        <div class="firstInput">
+          <input type="text" placeholder="Produto" id="inputItem" class="product"/>
+        </div>
+        <div class="secondInput">
+          <input type="number" placeholder="Quantidade" id="inputQuantidade" class="quant" />
+        </div>
+        <div class="thirdInput">
+          <input type="number" placeholder="Valor" id="inputValor" class="value"/>
+        </div>
+        <p>
+          <button type="button" id="BtAdicionar" onclick="hndBtnAddItem()">Adicionar</button>
+          <button id="BtLimpar" type="button" onclick="hndBtnClearList()">Limpar</button>
+        </p>
+      </div>
     </form>
-    </p>
-  </p>
-    <table id="tabela">
-      <tr>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Valor</th>
-        <th>Valor Total</th>
-      </tr>
-    </table>
+    <div id="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
     
-    
-    <p>Total: R$<span id="total">0.00</span></p>
     <script src="script.js"></script>
   </body>
-</html>
+  </html>    
